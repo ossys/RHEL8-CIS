@@ -1,5 +1,5 @@
 ---
-- hosts: '{{ hosts }}'
+- hosts: '{{ inventory_name }}'
   become: true
   vars:
       is_container: false
