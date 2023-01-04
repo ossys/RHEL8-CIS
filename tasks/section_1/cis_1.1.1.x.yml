@@ -15,7 +15,8 @@
             name: cramfs
             state: absent
         when:
-            - not system_is_container
+          - ansible_connection != 'docker'
+          - not rhel8cis_system_is_container
   when:
       - rhel8cis_rule_1_1_1_1
   tags:
@@ -41,7 +42,8 @@
             name: squashfs
             state: absent
         when:
-            - not system_is_container
+          - ansible_connection != 'docker'
+          - not rhel8cis_system_is_container
   when:
       - rhel8cis_rule_1_1_1_2
   tags:
@@ -67,7 +69,8 @@
             name: udf
             state: absent
         when:
-            - not system_is_container
+          - ansible_connection != 'docker'
+          - not rhel8cis_system_is_container
   when:
       - rhel8cis_rule_1_1_1_3
   tags:

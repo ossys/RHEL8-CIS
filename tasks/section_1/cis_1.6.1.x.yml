@@ -38,6 +38,7 @@
   when:
       - not rhel8cis_selinux_disable
       - rhel8cis_rule_1_6_1_3
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -55,6 +56,7 @@
   when:
       - not rhel8cis_selinux_disable
       - rhel8cis_rule_1_6_1_4
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -71,6 +73,7 @@
   when:
       - not rhel8cis_selinux_disable
       - rhel8cis_rule_1_6_1_5
+      - not rhel8cis_system_is_container
   tags:
       - level2-server
       - level2-workstation

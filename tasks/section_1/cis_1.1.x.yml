@@ -35,6 +35,7 @@
             state: absent
   when:
       - rhel8cis_rule_1_1_10
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level2-workstation

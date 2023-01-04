@@ -31,6 +31,8 @@
   when:
       - not rhel8cis_skip_for_travis
       - rhel8cis_rule_4_1_1_2
+      - ansible_connection != 'docker'
+      - not rhel8cis_system_is_container
   tags:
       - level2-server
       - level2-workstation
@@ -65,6 +67,7 @@
         when: "'audit=' not in rhel8cis_4_1_1_3_grub_cmdline_linux.stdout"
   when:
       - rhel8cis_rule_4_1_1_3
+      - not rhel8cis_system_is_container
   tags:
       - level2-server
       - level2-workstation
@@ -100,6 +103,7 @@
         when: "'audit_backlog_limit=' not in rhel8cis_4_1_1_4_grub_cmdline_linux.stdout"
   when:
       - rhel8cis_rule_4_1_1_4
+      - not rhel8cis_system_is_container
   tags:
       - level2-server
       - level2-workstation

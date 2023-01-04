@@ -23,6 +23,7 @@
   when:
       - not rhel8cis_is_router
       - rhel8cis_rule_3_2_1
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -46,6 +47,7 @@
   when:
       - not rhel8cis_is_router
       - rhel8cis_rule_3_2_2
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation

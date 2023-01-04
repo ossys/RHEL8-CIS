@@ -51,6 +51,7 @@
   when:
       - rhel8cis_firewall == "firewalld"
       - rhel8cis_rule_3_4_1_3
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -67,6 +68,7 @@
   when:
       - rhel8cis_firewall == "firewalld"
       - rhel8cis_rule_3_4_1_4
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -90,6 +92,7 @@
   when:
       - rhel8cis_firewall == "firewalld"
       - rhel8cis_rule_3_4_1_5
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation

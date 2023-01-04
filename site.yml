@@ -2,7 +2,7 @@
 - hosts: default
   become: true
   vars:
-      is_container: false
+      is_container: true
 
   roles:
 

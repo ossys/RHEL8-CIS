@@ -32,6 +32,7 @@
       - rhel8cis_rule_1_1_8_1 or
         rhel8cis_rule_1_1_8_2 or
         rhel8cis_rule_1_1_8_3
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation

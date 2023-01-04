@@ -90,11 +90,15 @@
   service:
       name: systemd-journald
       state: restarted
+  when:
+    - not rhel8cis_system_is_container
 
 - name: restart systemd_journal_upload
   service:
       name: systemd-journal-upload
       state: restarted
+  when:
+    - not rhel8cis_system_is_container
 
 - name: rhel8cis_grub2cfg
   command: "grub2-mkconfig -o {{ grub_cfg.stat.lnk_source }}"
@@ -107,10 +111,22 @@
   service:
       name: rsyslog
       state: restarted
+  when:
+    - not rhel8cis_system_is_container
+
+- name: restart syslog-ng
+  become: yes
+  service:
+      name: syslog-ng
+      state: restarted
+  when:
+    - not rhel8cis_system_is_container
 
 - name: systemd_daemon_reload
   systemd:
       daemon-reload: yes
+  when:
+    - not rhel8cis_system_is_container
 
 - name: change_requires_reboot
   set_fact:

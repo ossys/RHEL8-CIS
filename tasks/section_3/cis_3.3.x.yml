@@ -29,6 +29,7 @@
         when: rhel8cis_ipv6_required
   when:
       - rhel8cis_rule_3_3_1
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -67,6 +68,7 @@
         when: rhel8cis_ipv6_required
   when:
       - rhel8cis_rule_3_3_2
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -89,6 +91,7 @@
       - { name: net.ipv4.conf.default.secure_redirects, value: 0 }
   when:
       - rhel8cis_rule_3_3_3
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -111,6 +114,7 @@
       - { name: net.ipv4.conf.default.log_martians, value: 1 }
   when:
       - rhel8cis_rule_3_3_4
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -129,6 +133,7 @@
   notify: sysctl flush ipv4 route table
   when:
       - rhel8cis_rule_3_3_5
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -147,6 +152,7 @@
   notify: sysctl flush ipv4 route table
   when:
       - rhel8cis_rule_3_3_6
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -166,6 +172,7 @@
   notify: sysctl flush ipv4 route table
   when:
       - rhel8cis_rule_3_3_7
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -184,6 +191,7 @@
   notify: sysctl flush ipv4 route table
   when:
       - rhel8cis_rule_3_3_8
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
@@ -207,6 +215,7 @@
   when:
       - rhel8cis_ipv6_required
       - rhel8cis_rule_3_3_9
+      - not rhel8cis_system_is_container
   tags:
       - level1-server
       - level1-workstation
